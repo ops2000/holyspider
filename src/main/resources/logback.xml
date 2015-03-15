@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wangs>
+
+<configuration>
+	<timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-5level [%thread]: %message%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.FileAppender">
+		<file>./${project.artifactId}-${bySecond}.log</file>
+
+		<encoder>
+			<pattern>%date %level [%thread] %msg %logger{30} [%file:%line]%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="ops2015" level="TRACE" />
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>
+
+<!-- Java Template : protected final org.slf4j.Logger log = org.slf4j.LoggerFactory 
+	.getLogger(${enclosing_type}.class); -->

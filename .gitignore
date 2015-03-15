@@ -1,0 +1,11 @@
+/.settings
+/.classpath
+/.project
+/.logs
+/target
+/db
+/bin
+/derby.log
+/.externalToolBuilders/
+/target
+/target/
